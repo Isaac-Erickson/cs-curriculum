@@ -25,7 +25,6 @@ public class OverworldPlayerMovement : MonoBehaviour
         yDirection = Input.GetAxis("Vertical");
         yVector = yDirection * walkingSpeed * Time.deltaTime;
 
-        //same as before
-        //transform.position = transform.position + new Vector3(xVector, yVector, 0);
+        transform.position = transform.position + new Vector3(xVector, yVector, 0);
     }
 }
