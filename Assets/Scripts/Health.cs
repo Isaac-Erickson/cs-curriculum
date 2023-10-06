@@ -6,10 +6,11 @@ using TMPro;
 using UnityEditor;
 using UnityEngine.SceneManagement;
 
-public class SpikesHealthIFrames : MonoBehaviour
+public class Health : MonoBehaviour
 {
-    private float timer;
+    private float iframesTimer;
     private bool iframes;
+    public int spikedamage;
     
     private int health;
     public TextMeshProUGUI healthText;
@@ -18,7 +19,8 @@ public class SpikesHealthIFrames : MonoBehaviour
     void Start()
     {
         health = 10;
-        
+        iframesTimer = 1f;
+        spikedamage = 2;
     }
 
     // Update is called once per frame
@@ -30,7 +32,14 @@ public class SpikesHealthIFrames : MonoBehaviour
 
         if (iframes)
         {
-            //////////////////////////////
+            //Change to make it so when iframes are ture no damage, when iframes are false, take damage
+            iframesTimer = iframesTimer - Time.deltaTime;
+            
+            if (iframesTimer < 0)
+            {
+                iframes = false;
+                iframesTimer = 1f;
+            }
         }
     }
 
@@ -40,7 +49,7 @@ public class SpikesHealthIFrames : MonoBehaviour
         //take damage, change health, start IFrames
         if (other.gameObject.CompareTag("Spikes"));
         {
-            ChangeHealth(-2);
+            ChangeHealth(-spikedamage);
         }
 
         if (!iframes)
@@ -68,5 +77,6 @@ public class SpikesHealthIFrames : MonoBehaviour
     {
         //die, restart level, reset health/doubloons, create doubloon of value equal to "Doubloons:"
         //SceneManager.LoadScene("name");
+        
     }
 }
