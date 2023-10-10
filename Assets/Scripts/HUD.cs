@@ -5,8 +5,8 @@ using TMPro;
 
 public class HUD : MonoBehaviour
 {
-    public Doubloons doubloons;
-    public Health health;
+    public Doubloons bank;
+    public Health life;
     public TextMeshProUGUI doubloonsText;
     public TextMeshProUGUI healthText;
     
@@ -19,10 +19,10 @@ public class HUD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //doubloonsText.text = doubloons.doubloonsText.ToString();
-        //healthText.text = health.healthText.ToString();
+        //doubloonsText.text = bank.doubloonsText.ToString();
+        //healthText.text = life.healthText.ToString();
         
-        //doubloonsText.text = "Doubloons: " + doubloons;
-        //healthText.text = "Health: " + health;
+        doubloonsText.text = "Doubloons: " + bank.doubloons;
+        healthText.text = "Health: " + life.health;
     }
 }

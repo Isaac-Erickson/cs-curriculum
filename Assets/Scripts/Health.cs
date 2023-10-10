@@ -2,18 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEditor;
 using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
-    private float iframesTimer;
-    private bool iframes;
+    public float iframesTimer;
+    public bool iframes;
     public int spikedamage;
     
-    private int health;
-    public TextMeshProUGUI healthText;
+    public int health;
     
     // Start is called before the first frame update
     void Start()
@@ -27,18 +25,21 @@ public class Health : MonoBehaviour
     void Update()
     {
         Debug.Log("Health: " + health);
-        //healthText.text = "Health: " + health;
         
 
         if (iframes)
         {
+           
             //Change to make it so when iframes are ture no damage, when iframes are false, take damage
+            iframesTimer = 1f;
             iframesTimer = iframesTimer - Time.deltaTime;
+            spikedamage = 0;
             
             if (iframesTimer < 0)
             {
+                spikedamage = 2;
                 iframes = false;
-                iframesTimer = 1f;
+                //iframesTimer = 1f;
             }
         }
     }
@@ -50,14 +51,13 @@ public class Health : MonoBehaviour
         if (other.gameObject.CompareTag("Spikes"));
         {
             ChangeHealth(-spikedamage);
+            
+            if (!iframes)
+            {
+                iframes = true;
+            }
         }
 
-        if (!iframes)
-        {
-            iframes = true;
-            
-        }
-        
     }
 
     void ChangeHealth(int amount)
@@ -76,7 +76,8 @@ public class Health : MonoBehaviour
     void Death()
     {
         //die, restart level, reset health/doubloons, create doubloon of value equal to "Doubloons:"
-        //SceneManager.LoadScene("name");
+        //health = 10;
+        //SceneManager.LoadScene("Start");
         
     }
 }

@@ -2,12 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+
 
 public class Doubloons : MonoBehaviour
 {
-    private int doubloons;
-    public TextMeshProUGUI doubloonsText;
+    public int doubloons;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,6 @@ public class Doubloons : MonoBehaviour
     void Update()
     {
         Debug.Log("Doubloons: " + doubloons);
-        //doubloonsText.text = "Doubloons: " + doubloons;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
