@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
     public float iframesTimer;
     public bool iframes;
     public int spikedamage;
+    public int orbheal;
     
     public int health;
     
@@ -18,29 +19,33 @@ public class Health : MonoBehaviour
     {
         health = 10;
         iframesTimer = 1f;
+        iframes = false;
         spikedamage = 2;
+        orbheal = 2;
     }
 
     // Update is called once per frame
     void Update()
     {
         Debug.Log("Health: " + health);
-        
+
 
         if (iframes)
         {
-           
             //Change to make it so when iframes are ture no damage, when iframes are false, take damage
-            iframesTimer = 1f;
             iframesTimer = iframesTimer - Time.deltaTime;
-            spikedamage = 0;
-            
-            if (iframesTimer < 0)
-            {
-                spikedamage = 2;
-                iframes = false;
-                //iframesTimer = 1f;
-            }
+        }
+
+        if (iframesTimer < 0)
+        {
+            iframesTimer = 1f;
+            iframes = false;
+        }
+
+        if (Time.deltaTime < 0)
+        {
+            iframesTimer = 1f;
+            iframes = false;
         }
     }
 
@@ -50,12 +55,18 @@ public class Health : MonoBehaviour
         //take damage, change health, start IFrames
         if (other.gameObject.CompareTag("Spikes"));
         {
-            ChangeHealth(-spikedamage);
             
             if (!iframes)
             {
+                ChangeHealth(-spikedamage);
                 iframes = true;
             }
+        }
+        
+        if (other.gameObject.CompareTag("healthorb"));
+        {
+                ChangeHealth(orbheal);
+                other.gameObject.SetActive(false);
         }
 
     }
@@ -76,8 +87,8 @@ public class Health : MonoBehaviour
     void Death()
     {
         //die, restart level, reset health/doubloons, create doubloon of value equal to "Doubloons:"
-        //health = 10;
-        //SceneManager.LoadScene("Start");
+        health = 10;
+        SceneManager.LoadScene("Start");
         
     }
 }

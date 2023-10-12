@@ -9,13 +9,25 @@ public class HUD : MonoBehaviour
     public Health life;
     public TextMeshProUGUI doubloonsText;
     public TextMeshProUGUI healthText;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
+    public static HUD hud;
+    public int doubloons;
+    public int health;
+
+    void Awake()
+    {
+        if (hud != null && hud != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            hud = this;
+            DontDestroyOnLoad(gameObject);
+        }
+            
+    }
+    
     // Update is called once per frame
     void Update()
     {

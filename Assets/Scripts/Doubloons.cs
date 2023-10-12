@@ -6,13 +6,13 @@ using UnityEngine;
 
 public class Doubloons : MonoBehaviour
 {
+    public HUD hud;
     public int doubloons;
-   
-
+    
     // Start is called before the first frame update
     void Start()
     {
-
+        hud = GameObject.FindObjectOfType<HUD>();
     }
 
     // Update is called once per frame
@@ -34,7 +34,7 @@ public class Doubloons : MonoBehaviour
         void CollectDoubloon(int amount)
         {
             doubloons = doubloons + amount;
-            doubloons++;
+            hud.doubloons++;
         }
     }
 

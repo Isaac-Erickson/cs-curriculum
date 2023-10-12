@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 39912090}
   - component: {fileID: 39912089}
   - component: {fileID: 39912088}
+  - component: {fileID: 39912092}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -226,6 +227,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &39912092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39912087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9b67c088ae2b4028bd0ee059f84803b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bank: {fileID: 1750497391}
+  life: {fileID: 1750497390}
+  doubloonsText: {fileID: 2022762813}
+  healthText: {fileID: 66913937}
+  doubloons: 0
+  health: 0
 --- !u!1 &66913935
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +257,7 @@ GameObject:
   - component: {fileID: 66913938}
   - component: {fileID: 66913937}
   m_Layer: 5
-  m_Name: Life
+  m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -360,54 +379,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 66913935}
   m_CullTransparentMesh: 1
---- !u!1 &87004139
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 87004141}
-  - component: {fileID: 87004140}
-  m_Layer: 0
-  m_Name: HUD
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &87004140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 87004139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9b67c088ae2b4028bd0ee059f84803b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bank: {fileID: 1750497391}
-  life: {fileID: 1750497390}
-  doubloonsText: {fileID: 2022762813}
-  healthText: {fileID: 66913937}
---- !u!4 &87004141
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 87004139}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5385201, y: -0.56690496, z: -0.09588975}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &186509170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85016,6 +84987,7 @@ MonoBehaviour:
   iframesTimer: 0
   iframes: 0
   spikedamage: 0
+  orbheal: 0
   health: 0
 --- !u!114 &1750497391
 MonoBehaviour:
@@ -85029,6 +85001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83118a27df7034b38baafe29f60c5e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hud: {fileID: 0}
   doubloons: 0
 --- !u!114 &1750497392
 MonoBehaviour:
@@ -85065,6 +85038,8 @@ MonoBehaviour:
   life: {fileID: 0}
   doubloonsText: {fileID: 0}
   healthText: {fileID: 0}
+  doubloons: 0
+  health: 0
 --- !u!4 &1825907749 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4281311786053241907, guid: 69c7343f050914c7787bbbe42c07b5b8,
@@ -85849,6 +85824,5 @@ SceneRoots:
   - {fileID: 714287307}
   - {fileID: 781913440}
   - {fileID: 1482126851}
-  - {fileID: 87004141}
   - {fileID: 39912091}
   - {fileID: 1912510172}
