@@ -239,8 +239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9b67c088ae2b4028bd0ee059f84803b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bank: {fileID: 1750497391}
-  life: {fileID: 1750497390}
   doubloonsText: {fileID: 2022762813}
   healthText: {fileID: 66913937}
   doubloons: 0
@@ -84961,10 +84959,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1750497392}
-    - targetCorrespondingSourceObject: {fileID: 412193027009803667, guid: 34448014912494d33b041af48acd0291,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1750497396}
   m_SourcePrefab: {fileID: 100100000, guid: 34448014912494d33b041af48acd0291, type: 3}
 --- !u!1 &1750497384 stripped
 GameObject:
@@ -84988,7 +84982,7 @@ MonoBehaviour:
   iframes: 0
   spikedamage: 0
   orbheal: 0
-  health: 0
+  hud: {fileID: 0}
 --- !u!114 &1750497391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85002,7 +84996,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hud: {fileID: 0}
-  doubloons: 0
 --- !u!114 &1750497392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85022,24 +85015,6 @@ MonoBehaviour:
   yDirection: 0
   yVector: 0
   overworld: 1
---- !u!114 &1750497396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1750497384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9b67c088ae2b4028bd0ee059f84803b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bank: {fileID: 0}
-  life: {fileID: 0}
-  doubloonsText: {fileID: 0}
-  healthText: {fileID: 0}
-  doubloons: 0
-  health: 0
 --- !u!4 &1825907749 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4281311786053241907, guid: 69c7343f050914c7787bbbe42c07b5b8,

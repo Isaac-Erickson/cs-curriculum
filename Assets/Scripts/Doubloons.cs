@@ -7,7 +7,6 @@ using UnityEngine;
 public class Doubloons : MonoBehaviour
 {
     public HUD hud;
-    public int doubloons;
     
     // Start is called before the first frame update
     void Start()
@@ -18,7 +17,7 @@ public class Doubloons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Doubloons: " + doubloons);
+        Debug.Log("Doubloons: " + hud.doubloons);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -33,7 +32,7 @@ public class Doubloons : MonoBehaviour
 
         void CollectDoubloon(int amount)
         {
-            doubloons = doubloons + amount;
+            hud.doubloons = hud.doubloons + amount;
             hud.doubloons++;
         }
     }

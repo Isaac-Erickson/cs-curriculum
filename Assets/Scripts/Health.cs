@@ -11,13 +11,14 @@ public class Health : MonoBehaviour
     public bool iframes;
     public int spikedamage;
     public int orbheal;
-    
-    public int health;
+
+    public HUD hud;
     
     // Start is called before the first frame update
     void Start()
     {
-        health = 10;
+        hud = GameObject.FindObjectOfType<HUD>();
+        
         iframesTimer = 1f;
         iframes = false;
         spikedamage = 2;
@@ -27,11 +28,10 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Health: " + health);
-
+        Debug.Log("Health: " + hud.health);
 
         if (iframes)
-        {
+        { 
             //Change to make it so when iframes are ture no damage, when iframes are false, take damage
             iframesTimer = iframesTimer - Time.deltaTime;
         }
@@ -65,20 +65,19 @@ public class Health : MonoBehaviour
         
         if (other.gameObject.CompareTag("healthorb"));
         {
-                ChangeHealth(orbheal);
-                other.gameObject.SetActive(false);
+            ChangeHealth(orbheal);
+            other.gameObject.SetActive(false);
         }
-
     }
 
     void ChangeHealth(int amount)
     {
-        health = health + amount;
+        hud.health = hud.health + amount;
         
         //if health < 0
         //restart level, reset health, drop loot, reset doubloons/create doubloons
         //May have to move to OnCollisionEnter2D for "Spikes"
-        if (health < 1) ;
+        if (hud.health < 1) ;
         {
             Death();
         }
@@ -87,8 +86,10 @@ public class Health : MonoBehaviour
     void Death()
     {
         //die, restart level, reset health/doubloons, create doubloon of value equal to "Doubloons:"
-        health = 10;
+        hud.health = 10;
+        hud.doubloons = 0;
         SceneManager.LoadScene("Start");
+        
         
     }
 }
