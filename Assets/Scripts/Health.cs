@@ -18,7 +18,8 @@ public class Health : MonoBehaviour
     void Start()
     {
         hud = GameObject.FindObjectOfType<HUD>();
-        
+
+        hud.health = 10;
         iframesTimer = 1f;
         iframes = false;
         spikedamage = 2;
@@ -53,21 +54,26 @@ public class Health : MonoBehaviour
     {
         //when hitting spike
         //take damage, change health, start IFrames
-        if (other.gameObject.CompareTag("Spikes"));
+        if (other.gameObject.CompareTag("Spikes"))
         {
-            
+
             if (!iframes)
             {
                 ChangeHealth(-spikedamage);
                 iframes = true;
             }
+            else
+            {
+                ChangeHealth(0);
+            }
         }
-        
-        if (other.gameObject.CompareTag("healthorb"));
+
+        if (other.gameObject.CompareTag("HealthOrb"))
         {
             ChangeHealth(orbheal);
             other.gameObject.SetActive(false);
         }
+        //try adding separate OnCollisionEnter2D
     }
 
     void ChangeHealth(int amount)
@@ -77,7 +83,7 @@ public class Health : MonoBehaviour
         //if health < 0
         //restart level, reset health, drop loot, reset doubloons/create doubloons
         //May have to move to OnCollisionEnter2D for "Spikes"
-        if (hud.health < 1) ;
+        if (hud.health < 1)
         {
             Death();
         }
@@ -89,7 +95,6 @@ public class Health : MonoBehaviour
         hud.health = 10;
         hud.doubloons = 0;
         SceneManager.LoadScene("Start");
-        
         
     }
 }
