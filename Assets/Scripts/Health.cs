@@ -49,7 +49,6 @@ public class Health : MonoBehaviour
             iframes = false;
         }
     }
-
     private void OnCollisionEnter2D(Collision2D other)
     {
         //when hitting spike
