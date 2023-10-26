@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
     public float iframesTimer;
     public bool iframes;
     public int spikedamage;
+    public int firedamage;
     public int orbheal;
 
     public HUD hud;
@@ -23,6 +24,7 @@ public class Health : MonoBehaviour
         iframesTimer = 1f;
         iframes = false;
         spikedamage = 2;
+        firedamage = 1;
         orbheal = 2;
     }
 
@@ -51,6 +53,7 @@ public class Health : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
+        
         //when hitting spike
         //take damage, change health, start IFrames
         if (other.gameObject.CompareTag("Spikes"))
@@ -67,12 +70,28 @@ public class Health : MonoBehaviour
             }
         }
 
-        if (other.gameObject.CompareTag("HealthOrb"))
+        if (other.gameObject.CompareTag("Fireball"))
+        {
+            if (!iframes)
+            {
+                ChangeHealth(-firedamage);
+                iframes = true;
+            }
+            else
+            {
+                ChangeHealth(0);
+            }
+            other.gameObject.SetActive(false);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("HealthOrb"))
         {
             ChangeHealth(orbheal);
             other.gameObject.SetActive(false);
         }
-        //try adding separate OnCollisionEnter2D
     }
 
     void ChangeHealth(int amount)
