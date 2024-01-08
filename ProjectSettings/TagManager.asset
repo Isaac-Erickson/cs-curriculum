@@ -11,6 +11,7 @@ TagManager:
   - Doubloon
   - HealthOrb
   - Fireball
+  - AxeEnemy
   layers:
   - Default
   - TransparentFX

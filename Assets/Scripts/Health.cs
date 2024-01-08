@@ -31,8 +31,6 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Health: " + hud.health);
-
         if (iframes)
         { 
             //Change to make it so when iframes are ture no damage, when iframes are false, take damage
@@ -53,7 +51,6 @@ public class Health : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        
         //when hitting spike
         //take damage, change health, start IFrames
         if (other.gameObject.CompareTag("Spikes"))
@@ -97,6 +94,7 @@ public class Health : MonoBehaviour
     void ChangeHealth(int amount)
     {
         hud.health = hud.health + amount;
+        Debug.Log("Health: " + hud.health);
         
         //if health < 0
         //restart level, reset health, drop loot, reset doubloons/create doubloons

@@ -17,7 +17,7 @@ public class Doubloons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Doubloons: " + hud.doubloons);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -34,6 +34,7 @@ public class Doubloons : MonoBehaviour
         {
             hud.doubloons = hud.doubloons + amount;
             hud.doubloons++;
+            Debug.Log("Doubloons: " + hud.doubloons);
         }
     }
 
