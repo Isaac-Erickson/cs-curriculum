@@ -32,7 +32,7 @@ public class Turret : MonoBehaviour
         {
             if (inrange)
             {
-                shoot();
+                Shoot();
             }
         }
     }
@@ -58,7 +58,7 @@ public class Turret : MonoBehaviour
         }
     }
 
-    void shoot()
+    void Shoot()
     {
         Instantiate(fireball, shootpoint.position, shootpoint.rotation);
         turretTimer = startTime;

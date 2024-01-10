@@ -34,6 +34,12 @@ public class EnemyHealth : MonoBehaviour
         {
             Death();
         }
+        
+        if (other.gameObject.CompareTag("Fireball"))
+        {
+            
+            Death();
+        }
     }
     
     void Death()
