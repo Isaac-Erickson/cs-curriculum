@@ -12,6 +12,7 @@ TagManager:
   - HealthOrb
   - Fireball
   - AxeEnemy
+  - PlayerFireball
   layers:
   - Default
   - TransparentFX

@@ -5,14 +5,14 @@ using UnityEngine;
 public class EnemyChase : MonoBehaviour
 {
     
-    public bool playerinrange;
     public Transform target;
     public float runspeed = 2f;
     private float minDistance = 3f;
     private float range;
+    private Vector3 originalPos;
     void Start()
     {
-        //playerinrange = false;
+        originalPos = transform.position;
     }
     
     void Update()
@@ -23,39 +23,12 @@ public class EnemyChase : MonoBehaviour
         {
             Debug.Log(range);
 
-            transform.position = Vector2.MoveTowards(transform.position, target.position, runspeed * Time.deltaTime);        }
+            transform.position = Vector2.MoveTowards(transform.position, target.position, runspeed * Time.deltaTime);
+        }
+
+        if (range > minDistance)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, originalPos, runspeed * Time.deltaTime);
+        }
     }
-    
-    
-    //if (playerinrange)
-    //{
-    //     Follow();
-    //  }
-    
-    //private void OnTriggerStay2D(Collider2D other)
-    //{
-       // if (other.gameObject.CompareTag("Player"))
-       // {
-      //      playerinrange = true;
-            //if player in radius range
-
-       // }
-        
-   // }
-    
-    //private void OnTriggerExit2D(Collider2D other)
-   // {
-    //    if (other.gameObject.CompareTag("Player"))
-   //     {
-    //        playerinrange = false;
-    //        //if player not in radius range
-
-    //    }
-  //  }
-
-
-   // void Follow()
-  //  {
-        
-   // }
 }
