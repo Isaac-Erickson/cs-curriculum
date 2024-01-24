@@ -1,21 +1,30 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerJump : MonoBehaviour
 {
-    public float jumpForce = 25f;
-    private Rigidbody2D rigidBody;
+    public float speed = 10f;
+    public float jumpForce = 10f;
+    public Transform startPoint;
+    public float groundCheckDistance = 0.2f;
 
-    void Awake() 
+    private Rigidbody2D rb;
+
+    void Start() 
     {
-        rigidBody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
     
-    void Update () 
+    void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        Debug.DrawRay(startPoint.transform.position, -Vector2.up, Color.green);
+        float move = Input.GetAxis("Horizontal") * speed;
+        rb.velocity = new Vector2(move, rb.velocity.y);
+        
+        if (IsGrounded() && Input.GetKeyDown(KeyCode.Space)) {
             Jump();
         }
     }
@@ -24,22 +33,17 @@ public class PlayerJump : MonoBehaviour
     {
         if (IsGrounded()) 
         {
-            rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            
         }
     }
-
     
     public LayerMask groundLayer;
-
-    bool IsGrounded() 
+    
+    bool IsGrounded()
     {
-        if (Physics2D.Raycast(this.transform.position, Vector2.down, 0.2f, groundLayer.value)) 
-        {
-            return true;
-        }
-        else {
-            return false;
-        }
+        RaycastHit2D hit = Physics2D.Raycast(startPoint.transform.position, -Vector2.up, groundCheckDistance, groundLayer);
+        return hit.collider != null;
     }
 
 
