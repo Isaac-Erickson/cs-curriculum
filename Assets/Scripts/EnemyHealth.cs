@@ -13,6 +13,8 @@ public class EnemyHealth : MonoBehaviour
     public GameObject HealthOrb;
     public GameObject Axe;
     private int enemyDrops;
+
+    public static List<GameObject> enemiesDefeated = new List<GameObject>();
     
     void Start()
     {
@@ -26,6 +28,8 @@ public class EnemyHealth : MonoBehaviour
         {
             enemyDrops = 0;
         }
+
+        //EnemyHealth.enemyCount++;
     }
     
     void OnCollisionEnter2D(Collision2D other)
@@ -44,6 +48,8 @@ public class EnemyHealth : MonoBehaviour
     
     void Death()
     {
+        //EnemyHealth.enemiesDefeated.Add(GameObject);
+        
         Debug.Log("Drop Value: " + enemyDrops);
         
         if (enemyDrops == 1)

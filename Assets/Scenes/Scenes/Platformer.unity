@@ -206,10 +206,11 @@ MonoBehaviour:
   speed: 10
   jumpForce: 5
   startPoint: {fileID: 795401874}
-  groundCheckDistance: 0.2
+  groundCheckDistance: 0.5
+  IsGrounded: 0
   groundLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 8
 --- !u!4 &10822063 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1007222563776942056, guid: cddc0eae8679c4344b7e477729e7843b,
@@ -242,7 +243,7 @@ Transform:
   m_GameObject: {fileID: 795401873}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.121, y: -0.375, z: 1.5958765}
+  m_LocalPosition: {x: 0.094, y: -0.359, z: 1.5958765}
   m_LocalScale: {x: 0.06666667, y: 0.06666667, z: 0.6666667}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -315,7 +316,7 @@ GameObject:
   - component: {fileID: 934382340}
   - component: {fileID: 934382339}
   - component: {fileID: 934382338}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
