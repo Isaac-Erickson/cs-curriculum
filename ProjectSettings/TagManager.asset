@@ -13,6 +13,7 @@ TagManager:
   - Fireball
   - AxeEnemy
   - PlayerFireball
+  - InstaDeath
   layers:
   - Default
   - TransparentFX

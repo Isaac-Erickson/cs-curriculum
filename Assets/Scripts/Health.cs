@@ -80,6 +80,11 @@ public class Health : MonoBehaviour
             }
             other.gameObject.SetActive(false);
         }
+
+        if (other.gameObject.CompareTag("InstaDeath"))
+        {
+            Death();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)

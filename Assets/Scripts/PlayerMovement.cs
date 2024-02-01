@@ -16,15 +16,15 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        xSpeed = 3f;
-
         if (overworld)
         {
             ySpeed = 3f;
+            xSpeed = 3f;
         }
         else
         {
             ySpeed = 0f;
+            xSpeed = 1f;
         }
     }
 

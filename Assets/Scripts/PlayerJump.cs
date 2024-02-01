@@ -7,7 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerJump : MonoBehaviour
 {
- public float speed = 10f;
+ public float speed = 5f;
  public float jumpForce = 10f;
  public Transform startPoint;
  public float groundCheckDistance = 0.5f;
