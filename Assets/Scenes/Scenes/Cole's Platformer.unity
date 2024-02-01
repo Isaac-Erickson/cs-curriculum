@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 823585076}
   - component: {fileID: 823585075}
   m_Layer: 3
-  m_Name: Collision
+  m_Name: Collision 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -344,7 +344,7 @@ Transform:
   m_GameObject: {fileID: 823585073}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.7699999, y: -0.39, z: 0}
+  m_LocalPosition: {x: -0.0000028, y: 0.00000015, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2342,7 +2342,7 @@ GameObject:
   - component: {fileID: 1559842033}
   - component: {fileID: 1559842032}
   m_Layer: 0
-  m_Name: Cave Exit
+  m_Name: Cave Exit 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3102,7 +3102,7 @@ GameObject:
   - component: {fileID: 1923199116}
   - component: {fileID: 1923199115}
   m_Layer: 0
-  m_Name: No Collision
+  m_Name: No Collision 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
