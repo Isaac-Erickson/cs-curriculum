@@ -9,7 +9,7 @@ public class InstaDeath : MonoBehaviour
     {
         if (other.gameObject.CompareTag("InstaDeath"))
         {
-            SceneManager.LoadScene("RealPlatform");
+            SceneManager.LoadScene("RealPlatformer");
         }
     }
 

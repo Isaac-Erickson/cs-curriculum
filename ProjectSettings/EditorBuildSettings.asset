@@ -12,11 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Scenes/Overworld.unity
     guid: eb34bc3f628ce40569c426a4f69e316c
   - enabled: 1
+    path: Assets/Scenes/Scenes/RealPlatformer.unity
+    guid: 62cc3f31055694bfc816f12c7d1cb4ea
+  - enabled: 1
     path: Assets/Scenes/Scenes/Platformer.unity
     guid: 7c05f7b52541c470ea158ef3fa701101
   - enabled: 1
     path: Assets/Scenes/Scenes/Boss.unity
-    guid: e68d62933675e4a30815332ba18c2b44
+    guid: 29fa2dd69cd324510b1838169a245192
   - enabled: 1
     path: Assets/Scenes/Scenes/Treasure.unity
     guid: 45aedfce12fa642a7928136df8c6630d
